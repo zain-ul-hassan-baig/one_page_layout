@@ -1,0 +1,393 @@
+import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,900&display=swap');
+body{
+	margin: 0;
+	font-family: 'Roboto', sans-serif;
+}
+a{
+	text-decoration: none;
+}
+.red{
+	color: #f33f3f;
+}
+.white{
+	color: white;
+}
+/*navbar css*/
+/* Existing Styles */
+header {
+	position: sticky;
+	top: 0;
+}
+
+.navbar {
+	display: flex;
+	background-color: black;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0px 100px;
+}
+
+.navbar ul {
+	list-style-type: none;
+	display: flex;
+	margin: 0;
+}
+
+.navbar ul li {
+	margin-left: 20px;
+}
+
+.navbar ul li a {
+	position: relative;
+	padding: 20px 20px;
+	color: white;
+	text-decoration: none;
+}
+
+.active {
+	position: relative;
+	color: #f33f3f; /* Red color for active link */
+}
+
+.navbar ul li a::before {
+	content: "";
+	position: absolute;
+	width: 0%;
+	background-color: #f33f3f;
+	height: 3px;
+	bottom: 0;
+	right: 0;
+	transition: 0.5s;
+}
+
+.navbar ul li a:hover::before,
+.active::before {
+	width: 100%;
+	left: 0;
+}
+
+/*banner css*/
+.banner{
+	padding: 180px 100px;
+	background-image: url("../images/bg-section.jpg");
+}
+.banner div {
+	text-align: center;
+}
+.banner div h1{
+	font-size: 60px;
+}
+/*product section css*/
+.product{
+	padding: 50px 100px;
+}
+.section-heading{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid gray;
+}
+.section-heading h1{
+	font-size: 40px;
+	margin: 0;
+}
+/*product item css*/
+.product-main{
+	display: flex;
+	justify-content: space-between;
+}
+.product-item{
+	width: 30%;
+	border:1px solid gray;
+	border-radius: 10px;
+	margin: 50px 0px;
+	box-shadow: 2px 2px 10px gray;
+}
+
+.product-item img{
+	border-radius: 10px 10px 0px 0px;
+}
+.flex-box{
+	display: flex;
+	justify-content: space-between;
+}
+.product-inner{
+	padding: 20px;
+}
+.flex-box h3{
+	margin: 0;
+}
+.flex-box ul{
+	display: flex;
+	list-style-type: none;
+	padding: 0;
+}
+.flex-box ul li{
+	margin-right: 5px;
+}
+.flex-box button{
+	background-color: white;
+	border:1px solid #f33f3f;
+	padding: 0px 15px;
+	color: #f33f3f;
+	border-radius: 8px;
+}
+.flex-box button:hover{
+	background-color: #f33f3f;
+	color: white;
+}
+/*about css*/
+.about{
+	padding: 50px 100px;
+}
+.about-main{
+	display: flex;
+	justify-content: space-between;
+}
+.about-text{
+	width: 50%;
+	padding-top: 50px;
+	padding-right: 10px;
+}
+.about-img{
+	padding-top: 50px;
+}
+.about-text h2{
+	color: #013f8b;
+}
+.about-text ul{
+	padding-left: 18px;
+}
+.about-btn{
+	padding: 15px 25px;
+	border:none;
+	background-color: #f33f3f;
+	border-radius: 8px;
+	color: white;
+}
+.about-btn:hover{
+	background-color: white;
+	border:1px solid  #f33f3f;
+	color:  #f33f3f;
+}
+/*footer css*/
+footer{
+	padding: 30px 100px;
+	text-align: center;
+	border-top: 1px solid lightgray;
+}
+footer p{
+	margin: 0;
+}
+
+/* NavBar */
+@media (max-width: 1038px) {
+
+	.navbar {
+		padding: 0px 20px; 
+	}
+
+	.navbar ul {
+			list-style-type: none;
+			display: flex;
+			margin: 0;
+			padding: 0;
+			flex-direction: column;
+			position: absolute;
+			background-color: gray;
+			width: 30%;
+			right: 0;
+			top: 50px; /* Adjust based on your header height */
+			transform: translateY(-0px); /* Initial position off-screen */
+			opacity: -10; /* Initially hidden */
+			visibility: hidden; /* Initially hidden */
+			box-shadow: 0 1px 8px #f33f3f;
+			transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+		
+	}
+	
+	.navbar ul.show {
+		transform: translateY(0); /* Move into view */
+		opacity: 1; /* Show the dropdown */
+		visibility: visible; /* Ensure visibility */
+	}
+
+	.navbar-toggler {
+		display: inline-block; 
+		cursor: pointer;
+		background: none;
+		border: none;
+		color: white;
+		font-size: 24px;
+	}
+
+	.navbar h1 {
+		font-size: 30px; 
+	}
+
+
+	.navbar ul.show {
+		display: flex;
+	}
+}
+/* Media Query for Medium Screens */
+@media (max-width: 768px) {
+	
+}
+@media (max-width: 468px) {
+	.navbar h1 {
+		font-size: 20px; 
+	}
+	
+}
+
+
+/*banner css*/
+@media (max-width: 768px) {
+	
+	.banner div h1{
+		font-size: 30px;
+	}
+
+}
+@media (max-width: 468px) {
+	
+	
+	.banner div h2{
+		font-size: 20px;
+	}
+	.banner div h1{
+		font-size: 20px;
+	}
+
+}
+/* Product Section */
+@media (max-width: 768px) {
+    .product-main {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .product-item {
+        width: 100%;
+        margin-bottom: 0;
+    }
+	.product_Name{
+		font-size: 20px;
+	}
+
+    /* Responsive adjustments for buttons and stars */
+    .flex-box ul li {
+        font-size: 14px; /* Slightly smaller stars on medium screens */
+    }
+
+    .flex-box button {
+        font-size: 12px; /* Slightly smaller button text on medium screens */
+        padding: 4px 8px; /* Adjust button padding */
+    }
+
+}
+@media (max-width: 480px) {
+	.product div h1{
+		font-size: 20px;
+		padding: 0px;
+		margin: 0px;
+	}
+        
+    
+    .product-main {
+        grid-template-columns: 1fr; /* Only one product per row */
+    }
+
+    .product-item {
+        
+		width: 100%; /* Full width for each product */
+    }
+	  /* Responsive adjustments for buttons and stars */
+	  .flex-box ul li {
+       padding: 0;
+	   text-align:center;
+       margin-bottom: -15px;
+	  font-size: 10px; /* Slightly smaller stars on medium screens */
+    }
+
+    .flex-box button {
+		margin: 0px;
+		
+		padding: 0px;
+        font-size: 10px; /* Slightly smaller button text on medium screens */
+        padding: 2px 6px; /* Adjust button padding */
+    }
+}
+
+/* About Section */
+@media (max-width: 768px) {
+    .about-main {
+        flex-direction: column; /* Stack text and image vertically */
+    }
+
+    .about-text, .about-img {
+        width: 100%; /* Full width for both text and image */
+        padding: 10; /* Remove padding for a cleaner layout */
+    }
+
+    .about-img {
+        order: 2; /* Ensure the image is displayed after the text */
+    }
+
+    .about-text {
+        order: 1; /* Ensure the text is displayed before the image */
+    }
+
+    .section-heading h1 {
+        text-align: center; /* Center the heading */
+        margin-bottom: 20px; /* Add space between heading and content */
+    }
+}
+@media (max-width: 480px) {
+	.section-heading h1{
+		font-size:30px;
+	} 
+	.about-text h2{
+		font-size:20px;
+	}
+    .about-main {
+        flex-direction: column; /* Stack text and image vertically */
+    }
+
+    .about-text, .about-img {
+        width: 100%; /* Full width for both text and image */
+        padding: 5px; /* Adjust padding for smaller screens */
+    }
+
+    .about-img {
+        order: 1; /* Ensure the image is displayed after the text */
+    }
+
+    .about-text {
+        order: 2; /* Ensure the text is displayed before the image */
+    }
+	.about-btn {
+		font-size: 14px; /* Smaller font size */
+		padding: 8px 16px; /* Adjust padding */
+		width: 100%; /* Full width button */
+		box-sizing: border-box; /* Ensure padding is included in total width */
+	}
+
+    
+}
+
+/* Footer */
+@media (max-width: 768px) {
+
+footer p{
+	font-size: 10px;
+}
+}
+@media (max-width: 480px) {
+
+	footer p{
+		font-size: 7px;
+	}
+	}
